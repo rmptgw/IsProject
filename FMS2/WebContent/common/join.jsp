@@ -18,42 +18,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
-<link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="/js/common.js">
+<!-- <script type="text/javascript" src="js/common.js"/> -->
 </head>
 <body>
 	<jsp:include page="/frame/header.jsp" />
 	
 	<div align="center">
-		<form action="Eu?c=join" method="post" name="frm">
-			<table border="1">
+		<form action="Eu?c=join" method="post" name="frm" onsubmit="return joinCheck()">
+			<table border="1" >
 				<tr>회원가입</tr>
 				<tr>
-					<td>아이디</td>
-					<td><input type="text" name="fid"></td>
+					<td align="center">아이디</td>
+					<td><input type="text" name="fid" placeholder="아이디를 입력해주세요"></td>
 				</tr>
 				<tr>
-					<td>이메일</td>
+					<td align="center">이메일</td>
 					<td>
-						<input type="text" name="fid_front"> @ 
-						<input type="text" name="fid_rear"></td>
+						<input type="text" name="fid_front" placeholder="이메일 앞부분"> @ 
+						<input type="text" name="fid_rear" placeholder="이메일의 도메인 주소"></td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
-					<td><input type="password" name="fpw"></td>
+					<td align="center">비밀번호</td>
+					<td><input type="password" name="fpw" placeholder="비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
-					<td>비밀번호 확인</td>
-					<td><input type="password" name="refpw"></td>
+					<td align="center">비밀번호 확인</td>
+					<td><input type="password" name="refpw" placeholder="비밀번호를 다시 입력해주세요"></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="checkbox" name="agree">
-						이용약관 및 개인정보 이용방침에 동의합니다
+					<td colspan="2" align="center">
+						<input type="checkbox" name="agree">이용약관 및 개인정보 이용방침에 동의합니다
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="가입완료" onclick="<!-- return joinCheck() -->">
+						<input type="submit" value="가입완료" onclick="joinCheck()">
 						<input type="reset" value="다시입력" />
 					</td>
 				</tr>

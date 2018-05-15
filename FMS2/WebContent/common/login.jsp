@@ -23,14 +23,13 @@
 	<div align="center">
 		로그인
 		<form action="Eu?c=login_form" method="post">
-			<table>
+			<table border="1">
 				<tr>
 					<td>
 						<table>
 							<tr>
-								<td>아이디</td>
 								<td>
-									<input type="text" name="feid" id="feid">
+									<input type="text" name="feid" id="feid" placeholder="아이디">
 								</td>
 								<td rowspan="2">
 									<input type="submit" value="로그인">
@@ -38,18 +37,16 @@
 							</tr>
 							
 							<tr>
-								<td>비밀번호</td>
 								<td>
-									<input type="password" name="fepw" id="fepw">
+									<input type="password" name="fepw" id="fepw" placeholder="비밀번호">
 								</td>
 							</tr>
 							
 							<tr>
 								<td colspan = "2">
 									<a href="">아이디</a>/
-									<a href="">비밀번호</a>
-									찾기&#09;|&#09;
-									<a href="">회원가입</a>
+									<a href="">비밀번호찾기</a>&nbsp;|&nbsp;
+									<a href="Eu?c=join_form">회원가입</a>
 								</td>
 							</tr>
 						</table>
