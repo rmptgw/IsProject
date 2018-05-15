@@ -51,5 +51,6 @@
 	<c:otherwise>
 		<%-- otherwise니까 당연히 직원프로필을 출력해야겠지 --%>
 		<%-- 여기도 비슷하게 만들면됨 --%>
+		
 	</c:otherwise>
 </c:choose>

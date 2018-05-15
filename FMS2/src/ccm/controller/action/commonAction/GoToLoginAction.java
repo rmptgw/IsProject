@@ -1,4 +1,4 @@
-package ccm.controller.action.comat;
+package ccm.controller.action.commonAction;
 
 import java.io.IOException;
 

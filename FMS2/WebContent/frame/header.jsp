@@ -28,22 +28,11 @@
 		</c:when>
 		<c:otherwise>
 			<c:choose>
-				<c:when test="${loginemp == null}">안녕하세요 ${loginfree.fName}</c:when>
+				<c:when test="${loginemp == null}">안녕하세요 ${loginfree.name}</c:when>
 				<c:otherwise>안녕하세요 ${loginemp.eName}</c:otherwise>
 			</c:choose>
-			<a href="">로그아웃</a>
+			<a href="Eu?c=logout">로그아웃</a>
 		</c:otherwise>
 	</c:choose>
 </div>
 
-<%-- 로그인 상태면 미니프로필 표시 --%>
-<c:choose>
-	<c:when test="${loginfree == null && loginemp == null}">
-		<%-- 로그인상태 검사 --%>
-		<%-- 로그인상태가 아니면 프로필 출력안됨 --%>
-	</c:when>
-	<c:otherwise>
-		<%-- 로그인상태면 미니프로필 받아오면된다 --%>
-		<jsp:include page="miniprof.jsp"></jsp:include>
-	</c:otherwise>
-</c:choose>

@@ -22,6 +22,7 @@ public class FreelancerDAO {
 	public int insertFL(FreeLancerVO fVo) {
 		int result = -1;
 		String sql = "insert into freelancer(fid, fpw, email, joindate) VALUES(?, ?, ?, now())";
+		/*String sql = "insert into freelancer(freeid, freepw, freeemail, freejoindate) VALUES(?, ?, ?, now())";*/
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -55,6 +56,7 @@ public class FreelancerDAO {
 
 		Connection conn = null;
 		String sql = "select * from freelancer where fid=?";
+		/*String sql = "select * from freelancer where freeid=?";*/
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		FreeLancerVO fVo = null;
@@ -66,6 +68,28 @@ public class FreelancerDAO {
 
 			rs = pstmt.executeQuery();
 
+			/*if (rs.next()) {
+				fVo = new FreeLancerVO();
+
+				fVo.setfID(rs.getString("freeid"));
+				fVo.setfPW(rs.getString("freepw"));
+				fVo.setName(rs.getString("freename"));
+				fVo.setPic(rs.getString("freepic"));
+				fVo.setBirth(rs.getDate("freebirth"));
+				fVo.setSex(rs.getBoolean("freesex"));
+				fVo.setPhone(rs.getString("freephone"));
+				fVo.setEmail(rs.getString("freeemail"));
+				fVo.setEuClass(rs.getString("freeclass"));
+				fVo.setfClass(rs.getString("freeclass"));
+				fVo.setMarried(rs.getBoolean("freemarried"));
+				fVo.setFrontAddr(rs.getString("freefrontaddr"));
+				fVo.setRearAddr(rs.getString("freerearaddr"));
+				fVo.setBank(rs.getString("freebank"));
+				fVo.setAccName(rs.getString("freeaccname"));
+				fVo.setAccount(rs.getString("freeaccount"));
+				fVo.setReviser(rs.getString("freereviser"));
+				fVo.setRevDate(rs.getDate("freerevdate"));
+			}*/
 			if (rs.next()) {
 				fVo = new FreeLancerVO();
 

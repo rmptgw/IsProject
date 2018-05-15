@@ -38,17 +38,17 @@
 			</tr>
 			<tr>
 				<td colspan="6">
-					<textarea rows="10" cols="50"></textarea>
+					<textarea rows="10" cols="70"></textarea> 
+					
 				</td>
 			</tr>
 			<tr>
 				<td colspan="6" align="right">
-					<input type="button" value="보내기">
+					<input type="submit" value="보내기">
 					<input type="button" value="취소">
 				</td>
 			</tr>			
 		</table>
-		
 	</form>
 </body>
 </html>

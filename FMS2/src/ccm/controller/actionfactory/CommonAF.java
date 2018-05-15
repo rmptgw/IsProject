@@ -2,9 +2,7 @@ package ccm.controller.actionfactory;
 
 import ccm.controller.Action;
 import ccm.controller.action.*;
-import ccm.controller.action.comat.GoToLoginAction;
-import ccm.controller.action.comat.GoToMainAction;
-import ccm.controller.action.comat.LoginProcessAction;
+import ccm.controller.action.commonAction.*;
 
 /***************************
  * 
@@ -39,10 +37,14 @@ public class CommonAF
 			action = new GoToLoginAction();
 		} else if(command.equals("login_form")) {
 			action = new LoginProcessAction();
+		} else if (command.equals("logout")){
+			action = new LogoutAction();
 		} else if (command.equals("join_form")) {
 			action = new JoinFormAction();
 		} else if (command.equals("join")) {
 			action = new JoinAction();
+		} else if (command.equals("message_form")) {
+			action = new MessageFormAction();
 		}
 
 		return action;

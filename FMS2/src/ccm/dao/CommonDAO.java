@@ -32,6 +32,7 @@ public class CommonDAO
 		try {
 			initContext = new InitialContext();
 			DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/mariadb");
+			/*DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/mysql");*/
 			conn = ds.getConnection();
 
 		} catch (NamingException e) {
@@ -54,8 +55,13 @@ public class CommonDAO
 				+ " EPHONE, EEMAIL, EBIRTH, ESEX, EMARRIED, EFRONTADDR, EREARADDR, EBANK,"
 				+ " EACCNAME, EACCOUNT  FROM EMPLOYEE"
 				+ " WHERE EID = ? AND EPW = ?";*/
+		
+		// 로컬DB내의 테이블의 필드명과 azure내의 테이블의 필드명이 다름
 		String freeSql = "SELECT * FROM FREELANCER WHERE FID = ? AND FPW = ?";
 		String empSql = "SELECT * FROM EMPLOYEE WHERE EID = ? AND EPW = ?";
+		
+		/*String freeSql = "SELECT * FROM FREELANCER WHERE FreeID = ? AND FreePW = ?";
+		String empSql = "SELECT * FROM EMPLOYEE WHERE EmpID = ? AND EmpPW = ?";*/
 		
 		//결과값 -1은 로그인실패 1은 프리랜서로그인 2는 직원로그인
 		int res = -1;
@@ -76,6 +82,31 @@ public class CommonDAO
 			
 			while (freers.next())
 			{
+				/*if(freers.getString("FreeID") != null);
+				{	
+					loginFree.setfID(freers.getString("FreeID"));
+					loginFree.setfPW(freers.getString("Freepw"));
+					loginFree.setName(freers.getString("freeNAME"));
+					loginFree.setPic(freers.getString("freePIC"));
+					loginFree.setBirth(freers.getDate("freebirth"));
+					loginFree.setSex(freers.getBoolean("freeSEX"));
+					loginFree.setPhone(freers.getString("freePHONE"));
+					loginFree.setEmail(freers.getString("freeEMAIL"));
+					loginFree.setJoinDate(freers.getDate("freeJOINDATE"));
+					loginFree.setDropDate(freers.getDate("freeDROPDATE"));
+					loginFree.setEuClass(freers.getString("freeCLASS"));
+					loginFree.setMarried(freers.getBoolean("freeMARRIED"));
+					loginFree.setFrontAddr(freers.getString("freeFRONTADDR"));
+					loginFree.setRearAddr(freers.getString("freeREARADDR"));
+					loginFree.setBank(freers.getString("freeBANK"));
+					loginFree.setAccName(freers.getString("freeACCNAME"));
+					loginFree.setAccount(freers.getString("freeACCOUNT"));
+					loginFree.setReviser(freers.getString("freeREVISER"));
+					loginFree.setRevDate(freers.getDate("freeREVDATE"));
+					
+					res = 1;
+					break;
+				}*/
 				if(freers.getString("FID") != null);
 				{	
 					loginFree.setfID(freers.getString("FID"));
@@ -113,6 +144,31 @@ public class CommonDAO
 			
 			while (emprs.next())
 			{
+				/*if(emprs.getString("EmpID") != null);
+				{
+					loginEmp.seteID(emprs.getString("EmpID"));
+					loginEmp.setePW(emprs.getString("EmpPW"));
+					loginEmp.seteClass(emprs.getString("empCLASS"));
+					loginEmp.seteName(emprs.getString("empNAME"));
+					loginEmp.seteDept(emprs.getString("empDEPT"));
+					loginEmp.setPic(emprs.getString("empPICture"));
+					loginEmp.setJoinDate(emprs.getDate("empJOINDATE"));
+					loginEmp.setDropDate(emprs.getDate("empDROPDATE"));
+					loginEmp.setPhone(emprs.getString("empPHONE"));
+					loginEmp.setEmail(emprs.getString("empEMAIL"));
+					loginEmp.setBirth(emprs.getDate("EmpBIRTH"));
+					loginEmp.setSex(emprs.getBoolean("EmpSEX"));
+					loginEmp.setMarried(emprs.getBoolean("empMARRIED"));
+					loginEmp.setFrontAddr(emprs.getString("empFRONTADDR"));
+					loginEmp.setRearAddr(emprs.getString("empREARADDR"));
+					loginEmp.setBank(emprs.getString("empBANK"));
+					loginEmp.setAccName(emprs.getString("empACCNAME"));
+					loginEmp.setAccount(emprs.getString("empACCOUNT"));
+					
+					res = 2;
+					break;
+				}*/
+				
 				if(emprs.getString("EID") != null);
 				{
 					loginEmp.seteID(emprs.getString("EID"));

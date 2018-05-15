@@ -36,6 +36,7 @@ public class DBManager
 
 			// jdbc/myoracle이란 이름의 객체를 찾아서 DataSource가 받는다.
 			DataSource ds = (DataSource) envContext.lookup("jdbc/mariadb");
+			/*DataSource ds = (DataSource) envContext.lookup("jdbc/mysql");*/
 
 			// ds가 생성되었으므로 Connection을 구합니다.
 			conn = ds.getConnection();
