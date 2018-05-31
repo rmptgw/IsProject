@@ -118,6 +118,14 @@
 		<div>
 			<jsp:include page="/common/info/skillInventory.jsp" />
 		</div>
+		<table>
+			<tr>
+				<td align="right">
+					<input type="button" value="전체등록" onclick="">
+					<input type="button" value="▲TOP" onclick="">
+				</td>
+			</tr>
+		</table>
 		</form>
 	</div>
 </body>

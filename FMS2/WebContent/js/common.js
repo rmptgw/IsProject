@@ -42,3 +42,22 @@ function joinCheck() {
 	}
 	return true;
 }
+function selectReceiver(){
+	var popUrl = "common/msg/selectReceiver.html";	//팝업창에 출력될 페이지 URL
+
+	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+		window.open(popUrl,"",popOption);
+
+}
+
+function msgView(){
+	
+}
+
+function receiveMsg() {
+	document.sendMsgFrm.msgTitle.value = "Re:" + document.showMsgFrm.msgTitle.value;
+	document.sendMsgFrm.receiver.value = document.showMsgFrm.receiver.value;
+	document.sedfMsgFrm.project.value = document.showMsgFrm.project.value;
+	document.sendMsgFrm.msgTitle.focus();
+}

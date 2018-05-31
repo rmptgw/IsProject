@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import ccm.data.dto.FreeLancerVO;
+import ccm.data.table.*;
 import ccm.util.DBManager;;
 
 public class FreelancerDAO {
@@ -19,10 +19,9 @@ public class FreelancerDAO {
 		return instance;
 	}
 
-	public int insertFL(FreeLancerVO fVo) {
+	public int insertFL(Freelancer fVo) {
 		int result = -1;
-		String sql = "insert into freelancer(fid, fpw, email, joindate) VALUES(?, ?, ?, now())";
-		/*String sql = "insert into freelancer(freeid, freepw, freeemail, freejoindate) VALUES(?, ?, ?, now())";*/
+		String sql = "insert into freelancer(freeId, freePw, freeEmail, freeJoindate) VALUES(?, ?, ?, now())";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -30,9 +29,9 @@ public class FreelancerDAO {
 			conn = DBManager.getConnection();	//DB연동
 			pstmt = conn.prepareStatement(sql);
 			// 각각의 변수(?)에 회원가입 화면에 입력한 값을 넣는다.
-			pstmt.setString(1, fVo.getfID());
-			pstmt.setString(2, fVo.getfPW());
-			pstmt.setString(3, fVo.getEmail());
+			pstmt.setString(1, fVo.getFreeId());
+			pstmt.setString(2, fVo.getFreePw());
+			pstmt.setString(3, fVo.getFreeEmail());
 
 			result = pstmt.executeUpdate();
 			
@@ -51,15 +50,14 @@ public class FreelancerDAO {
 		return result;
 	}
 
-	public FreeLancerVO getfVo(String id) {
+	public Freelancer getfVo(String id) {
 		// TODO Auto-generated method stub
 
 		Connection conn = null;
-		String sql = "select * from freelancer where fid=?";
-		/*String sql = "select * from freelancer where freeid=?";*/
+		String sql = "select * from freelancer where freeId=?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		FreeLancerVO fVo = null;
+		Freelancer fVo = null;
 
 		try {
 			conn = DBManager.getConnection();
@@ -68,49 +66,30 @@ public class FreelancerDAO {
 
 			rs = pstmt.executeQuery();
 
-			/*if (rs.next()) {
-				fVo = new FreeLancerVO();
-
-				fVo.setfID(rs.getString("freeid"));
-				fVo.setfPW(rs.getString("freepw"));
-				fVo.setName(rs.getString("freename"));
-				fVo.setPic(rs.getString("freepic"));
-				fVo.setBirth(rs.getDate("freebirth"));
-				fVo.setSex(rs.getBoolean("freesex"));
-				fVo.setPhone(rs.getString("freephone"));
-				fVo.setEmail(rs.getString("freeemail"));
-				fVo.setEuClass(rs.getString("freeclass"));
-				fVo.setfClass(rs.getString("freeclass"));
-				fVo.setMarried(rs.getBoolean("freemarried"));
-				fVo.setFrontAddr(rs.getString("freefrontaddr"));
-				fVo.setRearAddr(rs.getString("freerearaddr"));
-				fVo.setBank(rs.getString("freebank"));
-				fVo.setAccName(rs.getString("freeaccname"));
-				fVo.setAccount(rs.getString("freeaccount"));
-				fVo.setReviser(rs.getString("freereviser"));
-				fVo.setRevDate(rs.getDate("freerevdate"));
-			}*/
 			if (rs.next()) {
-				fVo = new FreeLancerVO();
+				fVo = new Freelancer();
 
-				fVo.setfID(rs.getString("fid"));
-				fVo.setfPW(rs.getString("fpw"));
-				fVo.setName(rs.getString("name"));
-				fVo.setPic(rs.getString("pic"));
-				fVo.setBirth(rs.getDate("birth"));
-				fVo.setSex(rs.getBoolean("sex"));
-				fVo.setPhone(rs.getString("phone"));
-				fVo.setEmail(rs.getString("email"));
-				fVo.setEuClass(rs.getString("euclass"));
-				fVo.setfClass(rs.getString("class"));
-				fVo.setMarried(rs.getBoolean("married"));
-				fVo.setFrontAddr(rs.getString("frontaddr"));
-				fVo.setRearAddr(rs.getString("rearaddr"));
-				fVo.setBank(rs.getString("bank"));
-				fVo.setAccName(rs.getString("accname"));
-				fVo.setAccount(rs.getString("account"));
-				fVo.setReviser(rs.getString("reviser"));
-				fVo.setRevDate(rs.getDate("revdate"));
+				fVo.setFreeId(rs.getString("freeId"));
+				fVo.setFreePw(rs.getString("freePw"));
+				fVo.setFreeName(rs.getString("freeName"));
+				fVo.setFreePic(rs.getString("freePic"));
+				fVo.setFreeBirth(rs.getDate("freeBirth"));
+				fVo.setFreesex(rs.getBoolean("freeSex"));
+				fVo.setFreePhone(rs.getString("freePhone"));
+				fVo.setFreeEmail(rs.getString("freeEmail"));
+				fVo.setFreeJoinDate(rs.getDate("freeJoindate"));
+				fVo.setFreeDropDate(rs.getDate("freeDropDate"));
+				fVo.setFreeClass(rs.getInt("freeClass"));
+				fVo.setFreeKosa(rs.getInt("freeKosa"));
+				fVo.setFreeMarried(rs.getBoolean("freeMarried"));
+				fVo.setFreeFrontAddr(rs.getString("freeFrontaddr"));
+				fVo.setFreeRearAddr(rs.getString("freeRearaddr"));
+				fVo.setFreeBank(rs.getString("freeBank"));
+				fVo.setFreeAccName(rs.getString("freeAccName"));
+				fVo.setFreeAccount(rs.getString("freeAccount"));
+				fVo.setFreeReviser(rs.getString("freeReviser"));
+				fVo.setFreeReviseDate(rs.getDate("freeReviseDate"));
+				fVo.setFreeScore(rs.getInt("freeScore"));
 
 			}
 		} catch (Exception e) {
@@ -126,4 +105,5 @@ public class FreelancerDAO {
 		}
 		return fVo;
 	}
+	
 }

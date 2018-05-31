@@ -18,36 +18,36 @@
 			<th>담당업무</th>
 		</tr>
 		<tr>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 			<td>-</td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 		</tr>
 		<tr>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 			<td>-</td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 		</tr>
 		<tr>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 			<td>-</td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 		</tr>
 		<tr>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 			<td>-</td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
-			<td><input type="text"></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
+			<td><input type="text" value=""></td>
 		</tr>
 		<tr>
 			<td colspan="10" align="right"><input type="button" value="등록"></td>

@@ -31,17 +31,22 @@ public class DBManager
 
 		try
 		{
-			Context initContext = new InitialContext();
-			Context envContext = (Context) initContext.lookup("java:/comp/env");
+			 Context initContext = new InitialContext();
+			 Context envContext = (Context) initContext.lookup("java:/comp/env");
 
 			// jdbc/myoracle이란 이름의 객체를 찾아서 DataSource가 받는다.
-			DataSource ds = (DataSource) envContext.lookup("jdbc/mariadb");
-			/*DataSource ds = (DataSource) envContext.lookup("jdbc/mysql");*/
+			// DataSource ds = (DataSource) envContext.lookup("jdbc/mariadb");
+			 DataSource ds = (DataSource) envContext.lookup("jdbc/mysql");
 
 			// ds가 생성되었으므로 Connection을 구합니다.
 			conn = ds.getConnection();
 			
 			System.out.println(conn == null ? "null" : conn.toString());
+			/*Class.forName("org.gjt.mm.mysql.Driver");
+	        conn = DriverManager.getConnection("jdbc:mysql://ccmfmsmysqlserver.mysql.database.azure.com:3306/ccm?useSSL=true&requireSSL=false", 
+	                                    "ccmfrmsmysql@ccmfmsmysqlserver", "ccmfmsmysqladmin1234!");
+	         System.out.println("DB 연결 성공 :  " + conn);*/
+			
 		}
 		catch (Exception e)
 		{

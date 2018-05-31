@@ -124,6 +124,21 @@
 		<div>
 			<jsp:include page="/common/info/skillInventory.jsp"/><!-- 스킬인벤토리 -->
 		</div>
+		<div>
+			<table align="center" border="1">
+					<tr>
+						<td></td>
+						<td align="center">
+							<input type="button" value="닫기" onclick="">
+						</td>
+						<td colspan="3">
+							<input type="button" value="전체등록" onclick=""> 
+							<input type="button" value="계정삭제" onclick="" style="color: red;"> 
+							<input type="button" value="▲TOP" onclick="">
+						</td>
+					</tr>
+				</table>
+		</div>
 	</div>
 </body>
 </html>
